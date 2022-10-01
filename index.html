@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 2 (221402037)</title>
+    <style>
+      header {
+        text-align: center;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        letter-spacing: 2px;
+      }
+      form {
+        line-height: 27px;
+      }
+      .border {
+        border: 5px solid lime;
+        border-radius: 8px;
+      }
+      input {
+        width: 80vw;
+        border: 0px;
+        outline: 0;
+        border-bottom: 3px solid green;
+        transition: 0.3s;
+      }
+      input:invalid,
+      input:hover:invalid {
+        border-color: rgb(255, 0, 0);
+        transition: 0.3s;
+      }
+      input:hover {
+        border-color: black;
+      }
+      .nontext {
+        width: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>TUGAS 2 PEMROGRAMAN WEB</h1>
+    </header>
+    <div class="form">
+      <form action="#">
+        <fieldset class="border">
+          <legend>Registrasi Akun</legend>
+          <div>
+            <label for="Nama">Nama Lengkap :</label>
+            <input minlength="2" type="text" name="Nama" id="Nama" />
+          </div>
+          <div>
+            <label for="Gender">Jenis Kelamin :</label>
+            <br />
+            <input
+              class="nontext"
+              type="radio"
+              name="Gender"
+              id="Gender"
+            />Laki-Laki
+            <input
+              class="nontext"
+              type="radio"
+              name="Gender"
+              id="Gender"
+            />Perempuan
+          </div>
+          <div>
+            <label for="Nomor">Nomor Telp/Wa:</label>
+            <input minlength="2" type="phone" name="Nomor" id="Nomor" />
+          </div>
+          <div>
+            <label for="Minat">Keahlian yang diminati :</label>
+            <br />
+            <input
+              class="nontext"
+              type="checkbox"
+              name="Minat"
+              id="Minat"
+            />Machine Learning
+            <input
+              class="nontext"
+              type="checkbox"
+              name="Minat"
+              id="Minat"
+            />Data analyst
+            <input class="nontext" type="checkbox" name="Minat" id="Minat" />IT
+            Support
+            <input
+              class="nontext"
+              type="checkbox"
+              name="Minat"
+              id="Minat"
+            />Android Developer
+            <input class="nontext" type="checkbox" name="Minat" id="Minat" />Web
+            Developer
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
