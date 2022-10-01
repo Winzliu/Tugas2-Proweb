@@ -9,18 +9,26 @@
       header {
         text-align: center;
         font-size: 30px;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        letter-spacing: 2px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      legend {
+        font-size: 30px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       }
       form {
         line-height: 27px;
       }
       .border {
         border: 5px solid lime;
-        border-radius: 8px;
+        border-radius: 10px;
+      }
+      label {
+        display: block;
+        font-size: 20px;
       }
       input {
-        width: 80vw;
+        width: 90vw;
         border: 0px;
         outline: 0;
         border-bottom: 3px solid green;
@@ -34,8 +42,37 @@
       input:hover {
         border-color: black;
       }
+      div {
+        margin-bottom: 20px;
+      }
       .nontext {
         width: inherit;
+      }
+      select {
+        width: 30vw;
+        text-align: center;
+        border: 3px solid green;
+        border-radius: 10px;
+      }
+      .submit {
+        width: inherit;
+        border: 3px solid green;
+        border-radius: 15px;
+        background-color: greenyellow;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+        color: darkgreen;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+        padding: 5px 10px;
+        box-sizing: border-box;
+      }
+      .submit:hover {
+        color: black;
+        background-color: rgb(136, 227, 0);
+        transform: translateY(-5px);
+        box-shadow: 0px 20px 10px -10px black;
       }
     </style>
   </head>
@@ -44,22 +81,29 @@
       <h1>TUGAS 2 PEMROGRAMAN WEB</h1>
     </header>
     <div class="form">
-      <form action="#">
+      <form action="" method="post">
         <fieldset class="border">
           <legend>Registrasi Akun</legend>
           <div>
             <label for="Nama">Nama Lengkap :</label>
-            <input minlength="2" type="text" name="Nama" id="Nama" />
+            <input
+              required
+              placeholder="Masukan nama lengkap anda"
+              minlength="2"
+              type="text"
+              name="Nama"
+              id="Nama"
+            />
           </div>
           <div>
             <label for="Gender">Jenis Kelamin :</label>
-            <br />
             <input
               class="nontext"
               type="radio"
               name="Gender"
               id="Gender"
             />Laki-Laki
+            <br />
             <input
               class="nontext"
               type="radio"
@@ -69,35 +113,101 @@
           </div>
           <div>
             <label for="Nomor">Nomor Telp/Wa:</label>
-            <input minlength="2" type="phone" name="Nomor" id="Nomor" />
+            <input
+              required
+              pattern="[0]{1}[8]{1}[0-9]{8,12}"
+              placeholder="08xxxxxxxxxx(10-14)"
+              maxlength="14"
+              type="tel"
+              name="Nomor"
+              id="Nomor"
+            />
+          </div>
+          <div>
+            <label for="Alamat">Alamat lengkap :</label>
+            <textarea
+              required
+              placeholder="Jln.xxx,RT.xx,RW.xx,Kel.xxxx,Kec.xxxx,Kab.xxxx,Prov.xxxx,(Kode Pos)"
+              name="Alamat"
+              id="Alamat"
+              cols="70"
+              rows="3"
+            ></textarea>
           </div>
           <div>
             <label for="Minat">Keahlian yang diminati :</label>
-            <br />
             <input
               class="nontext"
               type="checkbox"
               name="Minat"
               id="Minat"
             />Machine Learning
+            <br />
             <input
               class="nontext"
               type="checkbox"
               name="Minat"
               id="Minat"
             />Data analyst
+            <br />
             <input class="nontext" type="checkbox" name="Minat" id="Minat" />IT
             Support
+            <br />
             <input
               class="nontext"
               type="checkbox"
               name="Minat"
               id="Minat"
             />Android Developer
+            <br />
             <input class="nontext" type="checkbox" name="Minat" id="Minat" />Web
             Developer
           </div>
+          <div>
+            <label for="Jam">Pemilihan jam kelas :</label>
+            <select required name="Jam" id="Jam">
+              <option value="#">--Pilih waktu--</option>
+              <option value="Pagi">09.00-11.00</option>
+              <option value="Siang">13.00-15.00</option>
+              <option value="Malam">19.00-21.00</option>
+            </select>
+          </div>
+          <div>
+            <label for="Email">Username/Email :</label>
+            <input
+              required
+              placeholder="xxx@gmail.com"
+              type="email"
+              name="Email"
+              id="Email"
+            />
+          </div>
+          <div>
+            <label for="Pass">Password :</label>
+            <input
+              required
+              placeholder="***"
+              minlength="5"
+              type="password"
+              name="Pass"
+              id="Pass"
+            />
+          </div>
         </fieldset>
+        <input
+          value="Kirim"
+          class="submit"
+          type="submit"
+          name="submit"
+          id="submit"
+        />
+        <input
+          value="Reset"
+          class="submit"
+          type="reset"
+          name="reset"
+          id="reset"
+        />
       </form>
     </div>
   </body>
