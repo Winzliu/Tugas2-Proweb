@@ -8,31 +8,41 @@
     <style>
       header {
         text-align: center;
+        margin: auto;
+        width: 600px;
         font-size: 30px;
         font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
           "Lucida Sans", Arial, sans-serif;
       }
       legend {
         font-size: 30px;
-        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin: auto;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        letter-spacing: 2px;
       }
       form {
+        width: 600px;
+        margin: auto;
         line-height: 27px;
       }
       .border {
-        border: 5px solid lime;
-        border-radius: 10px;
+        border: 5px solid rgb(125, 125, 125);
+        border-radius: 20px;
+        padding: 30px;
+        box-sizing: border-box;
       }
       label {
+        font-weight: bold;
         display: block;
         font-size: 20px;
       }
       input {
-        width: 90vw;
+        width: 90%;
         border: 0px;
         outline: 0;
-        border-bottom: 3px solid green;
+        border-bottom: 3px solid rgb(92, 183, 0);
         transition: 0.3s;
+        font-size: 17px;
       }
       input:invalid,
       input:hover:invalid {
@@ -40,7 +50,7 @@
         transition: 0.3s;
       }
       input:hover {
-        border-color: black;
+        border-color: rgb(0, 102, 255);
       }
       div {
         margin-bottom: 20px;
@@ -48,31 +58,54 @@
       .nontext {
         width: inherit;
       }
+      textarea {
+        font-size: 17px;
+      }
       select {
-        width: 30vw;
+        font-size: 17px;
+        font-weight: bold;
+        width: 500px;
         text-align: center;
-        border: 3px solid green;
+        border: 3px solid rgb(92, 183, 0);
         border-radius: 10px;
+        transition: 0.3s;
+        outline: none;
+      }
+      select:hover {
+        border-color: rgb(0, 102, 255);
       }
       .submit {
-        width: inherit;
+        display: block;
+        margin: auto;
+        width: 40%;
         border: 3px solid green;
-        border-radius: 15px;
-        background-color: greenyellow;
+        background-color: white;
+        border-radius: 10px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
         color: darkgreen;
-        margin-left: 20px;
         margin-top: 20px;
         margin-bottom: 50px;
         padding: 5px 10px;
         box-sizing: border-box;
       }
+      .reset {
+        background-color: white;
+      }
+
       .submit:hover {
         color: black;
         background-color: rgb(136, 227, 0);
         transform: translateY(-5px);
         box-shadow: 0px 20px 10px -10px black;
+      }
+      .reset:hover {
+        background-color: rgb(255, 74, 74);
+      }
+      .button {
+        display: flex;
+        width: 430px;
+        margin: auto;
       }
     </style>
   </head>
@@ -130,7 +163,7 @@
               placeholder="Jln.xxx,RT.xx,RW.xx,Kel.xxxx,Kec.xxxx,Kab.xxxx,Prov.xxxx,(Kode Pos)"
               name="Alamat"
               id="Alamat"
-              cols="70"
+              cols="44"
               rows="3"
             ></textarea>
           </div>
@@ -186,7 +219,7 @@
             <label for="Pass">Password :</label>
             <input
               required
-              placeholder="***"
+              placeholder="*****"
               minlength="5"
               type="password"
               name="Pass"
@@ -194,20 +227,22 @@
             />
           </div>
         </fieldset>
-        <input
-          value="Kirim"
-          class="submit"
-          type="submit"
-          name="submit"
-          id="submit"
-        />
-        <input
-          value="Reset"
-          class="submit"
-          type="reset"
-          name="reset"
-          id="reset"
-        />
+        <div class="button">
+          <input
+            value="Kirim"
+            class="submit"
+            type="submit"
+            name="submit"
+            id="submit"
+          />
+          <input
+            value="Hapus"
+            class="submit reset"
+            type="reset"
+            name="reset"
+            id="reset"
+          />
+        </div>
       </form>
     </div>
   </body>
